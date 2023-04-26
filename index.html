@@ -1,0 +1,386 @@
+<!-- HELLO
+-
+DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
+Created by Anil Seervi.
+-
+GitHub repo: https://github.com/AnilSeervi/DevFolio
+README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
+-
+Have fun creating your portfolio on this template!!! -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Title: add your Portfolio websites's title here -->
+    <title>Gagan Nagaraj | C++ Developer</title>
+
+    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="[username], [name], skill" />
+
+    <!-- Improve your SEO by adding a small descrption of you -->
+    <meta name="description" content="[Your name here] | Developer" />
+
+    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
+    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
+
+    <!-- Add your primary-theme color for the value of content -->
+    <meta name="theme-color" content="#36d1dc" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <!-- Fill content with the URL of this portfolio you'll host -->
+    <meta property="og:url" content="https://devfolio.js.org/" />
+    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
+    <meta property="og:title" content="[Your name here] | Developer" />
+    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
+    <meta property="og:description" content="Made using DevFolio Template" />
+    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
+      so that a thumbnail image of your portfolio is shown while shared on other platform -->
+    <meta
+      property="og:image"
+      content="https://devfolio.js.org/assets/devfolio.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- Again fill content attr with the URL of this portfolio you'll host -->
+    <meta property="twitter:url" content="https://devfolio.js.org" />
+    <!-- Recommended to use the same text used within <title> element -->
+    <meta property="twitter:title" content="[Your name here] | Developer" />
+    <!-- short description that shows up while your portfolio is shared -->
+    <meta
+      property="twitter:description"
+      content="Made using DevFolio Template"
+    />
+    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
+    <meta
+      property="twitter:image"
+      content="https://anilseervi.vercel.app/assets/devfolio.png"
+    />
+
+    <!-- link tags -->
+    <link rel="preload" as="style" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- FontAwesome Icons link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="./javascript/scrollreveal.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="./javascript/scrollveal.js"
+    ></script>
+
+    <!-- Remove Google Analytics once you have your portfolio website set-up -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "UA-122228201-4")
+    </script>
+    <!-- End of Google Analytics -->
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <h1 class="hero-title">
+          Hi, my name is <span class="text-color-main name">Gagan Nagaraj</span>
+          <br />
+          I like to make hardware move with code.
+        </h1>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="#about">Get in touch</a>
+        </p>
+      </section>
+      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
+        <div class="scroll-down"></div
+      ></a>
+    </div>
+    <!-- /END Hero Section -->
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row about-wrapper">
+          <div class="about-wrapper__image">
+            <img
+              class="img-fluid"
+              src="./assets/profile.JPG"
+              alt="Profile Image"
+              width="450"
+              height="350"
+            />
+          </div>
+          <div class="about-wrapper__info">
+            <p class="about-wrapper__info-text">
+              I am a coding ninja with a Masters and a Bachelors - because two degrees are better than one, am I right xD?  I'm fluent in programming languages like C/C++, Python, and C#. When it comes to databases and frameworks, I know my NoSQL from my SQL and my TensorFlow from my Pytorch. And as for tools and operating systems, I can navigate Docker, GIT, Xcode, macOS, Linux/UNIX, and Jenkins blindfolded. Okay, maybe not blindfolded, but you get the point.
+            <!-- </p>
+            <p class="about-wrapper__info-text">
+              I've honed my skills at companies like Store Intelligence and eSamudaay, where I've saved the day with my ability to develop complex software applications and construct innovative APIs. As a Machine Learning Engineer Intern at Graphene AI, I was basically a wizard at language detection and filtering.
+            </p>
+            <p class="about-wrapper__info-text">
+              I've worked on some pretty cool projects, like my Similarity-Aware Channel pruning for Convolutional Neural Networks - which sounds impressive, right? I've also published a paper on an Interactive System for Toddlers using Doodle Recognition. Not to brag, but I'm basically a rockstar.
+            </p> -->
+            <p class="about-wrapper__info-text">
+              Overall, I'm a highly skilled and motivated Nerd who can do anything with code except make it taste good. So if you need a coding ninja on your team, I'm your guy.
+            </p>
+            <span class="about-wrapper__cta">
+              <a href="CV.pdf" class="cta-btn cta-btn--resume">View Resume</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END About Section -->
+
+    <!--Experience Section-->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Experience</h2>
+
+          <!-- Each .row is a project -->
+          <article>
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Store Intelligence, Pleasanton, CA: Software Engineer Intern</h3>
+              <p class="project-wrapper__text-info">
+                ● Collaborated to develop a C++ 11 multithreaded application with integration of SQLite3 running on Linux deployed on a Cortex-A53 SOM as an Edge Computing device named Access Point (AP) with primary function of binary protocol communication with FreeRTOS-based firmware. Refactored application to facilitate Domain Specific Language. <br>
+                ● Architected, Presented, and Programmed an accelerated communication protocol between Cortex-A53 SOM and FreeRTOS to increase pace of screen updates on BLE devices by 150%, saving more than 8 seconds per update.<br>
+                ● Reduced testing time and resources by more than three-fourths through implementation of a C#-based IoT Debug/Test application to replicate cloud functionalities, enabling simultaneous testing of multiple Access Points (APs) in an efficient and streamlined manner.<br>
+                ● Accomplished integration of a code-based store-agent login system with robust 256-bit AES encryption into a consumer-based IOS application, resulting in enhanced security and user experience.<br>
+                ● Improved debugging process for developers by creating a Python-based Log Parser to aggregate insights from logs.<br>
+                ● Managed and supported Continuous Integration for multiple projects, ensuring smooth software delivery using Jenkins.
+              </p>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article>
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">eSamudaay, Bangalore, India: Software Engineer Intern</h3>
+              <p class="project-wrapper__text-info">
+                ● Constructed innovative APIs for a decentralized commerce platform, enabling community to seamlessly add new features such as "Add an Item after order" and "Schedule order" using Python and Django.<br>
+                ● Architected an intuitive API system to allow users to build custom UIs with ease by leveraging item labels.<br>
+                ● Demonstrated exceptional problem-solving skills by swiftly identifying and fixing bugs in over 15 existing APIs,
+                enhancing platform performance.<br>
+                ● Integrated numerous unit test cases using Pytest framework, leading to a notable improvement of 8% in overall
+                coverage, elevating it to a level of greater than 93%.
+              </p>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article>
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Graphene AI, Bangalore, India: Machine Learning Engineer Intern</h3>
+              <p class="project-wrapper__text-info">
+                ● Achieved a high level of accuracy in language detection and filtering by remodeling and deploying a model from Johnsnow Labs’s Spark-NLP library with an F1-score of 0.927 to help with Sentiment Analysis..<br>
+                ● Optimized data extraction process by automating it with web scraping frameworks (Scrapy and Selenium) and transforming data for compatibility with pipeline stages.<br>
+                ● Improved data manipulation with development of data visualization tools using Python and Streamlit.<br>
+                ● Incorporated a CI/CD pipeline into codebase, streamlining development process and ensuring efficient and consistent
+                delivery of updates.
+              </p>
+            </div>
+          </article>
+          <!-- /END Project -->
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
+
+    <!--Projects Section-->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Projects</h2>
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Similarity-Aware Channel pruning </h3>
+              <p class="project-wrapper__text-info">
+                Proposed a novel channel pruning method to accelerate and compress CNNs, allowing deployment on resource-constrained devices. The method compares similarity of a layer's output feature maps based on five criteria. This approach is particularly useful when deploying CNNs on devices with limited resources, such as mobile phones or IoT devices, where the reduced size and faster processing can be critical for efficient operation.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/remove_neuron.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Parallelization of Chess Engine</h3>
+              <p class="project-wrapper__text-info">
+                I worked on parallelizing a chess engine using OpenMP in C programming language. We implemented the Min-Max algorithm with root splitting to optimize the engine's efficiency. The objective was to speed up the process of finding the best move in a given chess position by parallelizing the computations.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/chess.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Ranking Relevance of Corpus</h3>
+              <p class="project-wrapper__text-info">
+                Our team of 4 developed a model for ranking the relevance of a text corpus using Markov Decision Process algorithms. We then evaluated the effectiveness of our model by comparing its results with benchmarks on the LETOR Dataset.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/corpus.jpeg"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+          <p class="contact-wrapper__text">Interested to connect? Ready, Set, </p>
+          <a href="#" class="cta-btn cta-btn--resume">Email Me</a>
+        </div>
+      </div>
+    </section>
+    <!-- END Contact Section -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="twitter"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="codepen"
+          >
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="linkedin"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="github"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <hr />
+      </div>
+    </footer>
+    <!-- END Footer Section -->
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear()
+    </script>
+    <script src="./javascript/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="./javascript/valtilt.js"></script>
+  </body>
+</html>
