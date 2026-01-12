@@ -1,383 +1,612 @@
-<!-- HELLO
--
-DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
-Created by Anil Seervi.
--
-GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
--
-Have fun creating your portfolio on this template!!! -->
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.png">
+    <title>Gagan Nagaraj | Software Engineer</title>
+    <style>
+        /* ========================================
+           CSS Variables & Reset
+        ======================================== */
+        :root {
+            --font-serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a6c7d;
+            --heading-color: #1a3a52;
+            --link-color: #2563eb;
+            --link-hover: #1d4ed8;
+            --accent: #e8f0fe;
+            --border-color: #d1dce5;
+            --background: #fafbfc;
+            --paper-bg: #ffffff;
+            --max-width: 800px;
+            --line-height: 1.75;
+        }
 
-    <!-- Title: add your Portfolio websites's title here -->
-    <title>Gagan Nagaraj | C++ Developer</title>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
+        /* ========================================
+           Base Typography & Layout
+        ======================================== */
+        html {
+            font-size: 15px;
+        }
 
-    <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+        body {
+            font-family: var(--font-serif);
+            line-height: var(--line-height);
+            color: var(--text-primary);
+            background: var(--background);
+            padding: 3rem 1.5rem;
+        }
 
-    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
-    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--paper-bg);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
 
-    <!-- Add your primary-theme color for the value of content -->
-    <meta name="theme-color" content="#36d1dc" />
+        /* ========================================
+           Header
+        ======================================== */
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--heading-color);
+        }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <!-- Fill content with the URL of this portfolio you'll host -->
-    <meta property="og:url" content="https://devfolio.js.org/" />
-    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
-    <meta property="og:title" content="[Your name here] | Developer" />
-    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
-    <meta property="og:description" content="Made using DevFolio Template" />
-    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
-      so that a thumbnail image of your portfolio is shown while shared on other platform -->
-    <meta
-      property="og:image"
-      content="https://devfolio.js.org/assets/devfolio.png"
-    />
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            letter-spacing: 0.01em;
+            margin-bottom: 0.75rem;
+        }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <!-- Again fill content attr with the URL of this portfolio you'll host -->
-    <meta property="twitter:url" content="https://devfolio.js.org" />
-    <!-- Recommended to use the same text used within <title> element -->
-    <meta property="twitter:title" content="[Your name here] | Developer" />
-    <!-- short description that shows up while your portfolio is shared -->
-    <meta
-      property="twitter:description"
-      content="Made using DevFolio Template"
-    />
-    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
-    <meta
-      property="twitter:image"
-      content="https://anilseervi.vercel.app/assets/devfolio.png"
-    />
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
 
-    <!-- link tags -->
-    <link rel="preload" as="style" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+        .contact-links {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+        }
 
-    <!-- FontAwesome Icons link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="./javascript/scrollveal.js"
-    ></script>
+        .contact-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
 
-    <!-- Remove Google Analytics once you have your portfolio website set-up -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag("js", new Date())
+        .contact-links a:hover {
+            border-bottom-color: var(--link-color);
+        }
 
-      gtag("config", "UA-122228201-4")
-    </script>
-    <!-- End of Google Analytics -->
-  </head>
-  <body>
-    <!-- Hero Section -->
-    <div id="hero">
-      <section class="container">
-        <h1 class="hero-title">
-          Hi, my name is <span class="text-color-main name">Gagan Nagaraj</span>
-          <br />
-          I like to make Hardware move and Machine Learn.
-        </h1>
-        <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
-        </p>
-      </section>
-      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
-        <div class="scroll-down"></div
-      ></a>
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.25rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+        }
+
+        /* ========================================
+           Section Styles
+        ======================================== */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 .section-number {
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-right: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           Links
+        ======================================== */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link-color);
+        }
+
+        /* ========================================
+           About / Intro Section
+        ======================================== */
+        .intro-text {
+            font-size: 1.05rem;
+        }
+
+        .research-interests {
+            margin-top: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--accent);
+            border-left: 3px solid var(--link-color);
+        }
+
+        .research-interests strong {
+            color: var(--heading-color);
+        }
+
+        /* ========================================
+           Experience Cards
+        ======================================== */
+        .entry {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .entry-meta {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .entry-org {
+            font-style: italic;
+        }
+
+        .entry-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .entry-description {
+            margin-top: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .entry.no-border {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 1rem;
+        }
+
+        /* ========================================
+           Projects
+        ======================================== */
+        .project {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--background);
+            border: 1px solid var(--border-color);
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title a {
+            color: inherit;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-title a:hover {
+            border-bottom-color: var(--link-color);
+            color: var(--link-color);
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========================================
+           Lists
+        ======================================== */
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: var(--link-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* ========================================
+           Education
+        ======================================== */
+        .education-entry {
+            margin-bottom: 1.25rem;
+        }
+
+        .education-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .institution {
+            color: var(--text-secondary);
+        }
+
+        .education-details {
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        /* ========================================
+           Footer
+        ======================================== */
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           Responsive Design
+        ======================================== */
+        @media (max-width: 600px) {
+            html {
+                font-size: 14px;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .project {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Gagan Nagaraj</h1>
+            <p class="tagline">Software Engineer</p>
+            <div class="contact-links">
+                <a href="mailto:gagan.konana@gmail.com">gagan.konana@gmail.com</a>
+                <a href="https://github.com/gagankonana">github.com/gagankonana</a>
+                <a href="https://linkedin.com/in/gagan-konana">linkedin.com/in/gagan-konana</a>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+                <a href="#open-source">Open Source</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#education">Education</a>
+            </nav>
+        </header>
+
+        <!-- About -->
+        <section id="about">
+            <h2><span class="section-number">1.</span> About</h2>
+            <p class="intro-text">
+               I’m Gagan Nagaraj, a software engineer based in Boulder, Colorado (pronounced “guh-gun,” rhymes with “begun”).
+
+I studied computer science in undergrad and grad school, focusing on systems programming and machine learning. My thesis combined both, exploring neural network compression for deployment on resource-constrained systems.
+
+I have over 2 years of full-time experience and multiple internships working on embedded and backend systems—building C++ services and designing performance-critical, security-sensitive infrastructure. I currently work at Splunk on the Platform Identity team, building identity frameworks for internal and external customers.
+
+Outside work, I enjoy climbing, snowboarding, and building and racing motorcycles. 
+            </p>
+            <div class="research-interests">
+                <strong>Interests:</strong> Concurrency, Parallel Computing, Distributed Systems, Identity and Access Control, Math behind Machine Learning
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2><span class="section-number">2.</span> Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">Splunk</span>
+                        <span class="entry-date">| Dec 2024 - Present</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Building identity and authentication infrastructure. Created a thread-safe TTL-enabled LRU cache in C++ for time-bound caching with O(1) peek, used to limit concurrent LDAP binds and prevent denial of service attacks. Implemented nested OAuth 2.1 Authorization Code + PKCE flow (RFC 7636), building Resource Server and Authorization Server in C++ and Go for MCP server integration. Built RFC 7519-compliant JWT with custom claims to unify auth across the Splunk ecosystem. Supported identity infrastructure expansion into GCP and 4 AWS regions.
+                </p>
+                <div class="tech-stack">C++ / Go / GTest / Kubernetes / PostgreSQL / AWS / GCP</div>
+            </div>
+
+            <div class="entry no-border">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">AdviNOW Medical</span>
+                        <span class="entry-date">| Jan 2024 - Nov 2024</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Designed a metaprogramming-based scoring algorithm to handle 100+ questionnaire templates, integrated with athenaOne EMR APIs. Led EMR integration refactor using Django, PostgreSQL, and Celery, transitioning from data-dependent triggers to RabbitMQ event-based task triggers. Re-architected the Rules Engine (FastAPI + SQLAlchemy) for multi-language translation support. Improved convergence speed of the Bayesian-based Diagnostic Engine by 15%.
+                </p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer Intern</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">AdviNOW Medical</span>
+                        <span class="entry-date">| Jun 2023 - Dec 2023</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Built a FastAPI microservice to generate History of Present Illness documents using Mako templates for the Doctor App and EMR integration. Optimized microservices through multithreading, PostgreSQL query minimization, and Neo4j cache restructuring, achieving 55%+ performance improvement per endpoint.
+                </p>
+                <div class="tech-stack">Python / Django / FastAPI / PostgreSQL / Celery / RabbitMQ / Neo4j</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer Intern</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">Store Intelligence</span>
+                        <span class="entry-date">| Apr 2022 - Aug 2022</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Implemented workflow priority queuing on IoT device timeslots, optimizing thread allocation by 30% in C++. Built a lexical analyzer for DSL support enabling custom QA flows. Integrated SQLite3 with C++ to move cloud data onto edge devices, reducing boot latency by 10%. Debugged memory fragmentation using Valgrind and refactored Cortex-A53/M4 binary communication protocol, cutting 75% RF cycle wastage.
+                </p>
+                <div class="tech-stack">C++ / SQLite3 / Yocto / Linux / Valgrind / ARM Cortex</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer Intern</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">eSamudaay</span>
+                        <span class="entry-date">| Oct 2021 - Feb 2022</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Built APIs for a decentralized commerce platform using Django with PostgreSQL integration. Architected a backend feature leveraging item labels to enable dynamic custom UI for marketplace storefronts. Identified and fixed bugs through corner case unit testing across 15+ endpoints, and integrated additional Pytest unit tests improving overall coverage by 8%.
+                </p>
+                <div class="tech-stack">Python / Django / PostgreSQL / Pytest</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Software Engineer Intern</div>
+                    <div class="entry-meta">
+                        <span class="entry-org">Graphene AI</span>
+                        <span class="entry-date">| May 2021 - Sep 2021</span>
+                    </div>
+                </div>
+                <p class="entry-description">
+                    Remodeled and deployed a TensorFlow deep learning model for language detection and filtering with an F1-score of 0.93, feeding reviews into the sentiment analysis pipeline. Improved the logistic regression component of the core Sentiment Analysis model, increasing accuracy by 2%. Automated data extraction using Scrapy and Selenium, and built data visualization tools with Python and Streamlit.
+                </p>
+                <div class="tech-stack">Python / TensorFlow / Scrapy / Selenium / Streamlit</div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2><span class="section-number">3.</span>Projects</h2>
+
+            <div class="project">
+                <div class="project-title"><a href="project_reports/Harmony.pdf">Harmony</a></div>
+                <div class="project-meta">Aug - Dec 2023</div>
+                <p class="project-description">
+                    A health companion application that aggregates data from smartwatches to track heart and mental health metrics. Provides contextual recommendations including restaurant suggestions, AQI monitoring, weather-based clothing advice, and daily calorie summaries. Built with a Flask backend on AWS processing data from Google Location API and wearable devices.
+                </p>
+                <div class="tech-stack">Python / Flask / AWS / Google APIs</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title"><a href="project_reports/Comparative Study of Medical Data Recognition.pdf">Comparative Study of Medical Data Recognition</a></div>
+                <div class="project-meta">Aug - Dec 2022</div>
+                <p class="project-description">
+                    Evaluated classification algorithms (k-NN, SVM, Logistic Regression, Random Forest, XGBoost, Naive Bayes, Decision Trees) for medical diagnosis across breast cancer, heart failure, and stroke prediction datasets. Applied SMOTE for imbalanced data handling and GridSearchCV for hyperparameter tuning.
+                </p>
+                <div class="tech-stack">Python / Scikit-learn / Pandas</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title"><a href="project_reports/Similarity-aware Channel Pruning.pdf">Similarity-Aware Channel Pruning for CNNs</a></div>
+                <div class="project-meta">Thesis | Jul 2021 - Mar 2022</div>
+                <p class="project-description">
+                    Developed a channel pruning method using feature map similarity to compress Convolutional Neural Networks for resource-constrained deployment. Instead of focusing on filter saliency, the approach directly identifies redundant feature maps and uses Weight Combination to reconstruct outputs with fewer channels. Evaluated on CIFAR-10.
+                </p>
+                <div class="tech-stack">Python / TensorFlow / PyTorch</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title"><a href="project_reports/Short Term Load Forecasting .pdf">Short Term Load Forecasting</a></div>
+                <div class="project-meta">Aug - Dec 2021</div>
+                <p class="project-description">
+                    Implemented and compared multiple approaches (DBN, K-means clustering, LSTM) for predicting electrical load demand using ENTSO-E power statistics and NCEI weather data. Focused on preventing overloading through accurate hourly-to-weekly predictions.
+                </p>
+                <div class="tech-stack">Python / TensorFlow / LSTM / Keras</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title"><a href="project_reports/chess engine.pdf">Parallelizing a Chess Engine</a></div>
+                <div class="project-meta">Jan - May 2021</div>
+                <p class="project-description">
+                    Built a parallel chess engine using the root-splitting algorithm to parallelize Minimax with alpha-beta pruning. Implemented multithreading with OpenMP, dividing child nodes of the root into clusters assigned to different threads. Achieved significant speedup over sequential execution while maintaining move quality through proper mutual exclusion at the root node.
+                </p>
+                <div class="tech-stack">C / OpenMP / Python</div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2><span class="section-number">4.</span> Publications</h2>
+
+            <div class="project">
+                <div class="project-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-12700-7_61">Interactive System for Toddlers using Doodle Recognition</a></div>
+                <div class="project-meta">Springer | Jul 2021 | <a href="project_reports/Interactive System for Toddlers using Doodle.pdf">PDF</a></div>
+                <p class="project-description">
+                    Published research on an HCI-focused application that enables toddlers to interact with computers through doodle drawing. A CNN model recognizes sketches in real-time, triggering educational responses. Designed following Fitts' law, Hick's law, and Don Norman's principles.
+                </p>
+                <div class="tech-stack">Python / TensorFlow / CNN</div>
+            </div>
+        </section>
+
+        <!-- Open Source -->
+        <section id="open-source">
+            <h2><span class="section-number">5.</span> Open Source Contributions</h2>
+            <ul>
+                <li><strong>TensorFlow</strong> [C++] - Fixed memory access violation in <code>tf.raw_ops.ResourceSparseApplyAdagrad*</code> APIs by adding input rank validation and raising downstream Python errors.</li>
+                <li><strong>Audio Streaming Library</strong> [C++] - Refactored packet delay to remove static initial delay and add dynamic session start based on audio stream latency accumulation, enabling better jitter handling and RTCP improvements.</li>
+                <li><strong>Task Scheduler</strong> [C++] - Fixed and added tests for safely throwing errors when setting end dates for tasks in 'pending' state.</li>
+            </ul>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2><span class="section-number">6.</span> Certifications</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/9EK39PYLH4BM"><strong>Structuring Machine Learning Projects</strong></a> - Coursera, Jul 2020</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/YEUEMBRNKMS4"><strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></a> - Coursera, May 2020</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/9B4YN44XV8FL"><strong>Neural Networks and Deep Learning</strong></a> - Coursera, May 2020</li>
+            </ul>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2><span class="section-number">7.</span> Education</h2>
+
+            <div class="education-entry">
+                <div class="degree">M.S. in Computer Science</div>
+                <div class="institution">Arizona State University, 2024 | GPA: 3.93</div>
+            </div>
+
+            <div class="education-entry">
+                <div class="degree">B.Tech in Computer and Information Science</div>
+                <div class="institution">National Institute of Technology Karnataka, 2022 | GPA: 7.72</div>
+            </div>
+        </section>
+
+        <footer>
+            Last updated: January 2025
+        </footer>
     </div>
-    
-    <!-- /END Hero Section -->
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="row about-wrapper">
-          <div class="about-wrapper__image">
-            <img
-              class="img-fluid"
-              src="./assets/profile.JPG"
-              alt="Profile Image"
-              width="450"
-              height="350"
-            />
-          </div>
-          <div class="about-wrapper__info">
-            <p class="about-wrapper__info-text">
-              I'm a computer science whiz currently pursuing my Master's in Computer Science, specializing in Artificial Intelligence at Arizona State University. I've also got a Bachelor's from the National Institute of Technology, Karnataka, India.
-            <!-- </p>
-            <p class="about-wrapper__info-text">
-              I've honed my skills at companies like Store Intelligence and eSamudaay, where I've saved the day with my ability to develop complex software applications and construct innovative APIs. As a Machine Learning Engineer Intern at Graphene AI, I was basically a wizard at language detection and filtering.
-            </p>
-            <p class="about-wrapper__info-text">
-              I've worked on some pretty cool projects, like my Similarity-Aware Channel pruning for Convolutional Neural Networks - which sounds impressive, right? I've also published a paper on an Interactive System for Toddlers using Doodle Recognition. Not to brag, but I'm basically a rockstar.
-            </p> -->
-            <p class="about-wrapper__info-text">
-              As a Software Engineer with lot of passion for C++ and edge computing, I've been working on my skills through diverse experiences in healthcare tech, retail intelligence, and AI-driven market research solutions. At AdviNOW Medical, I led the refactor of an EMR integration project and enhanced diagnostic models, contributing to critical healthcare applications. Intership at Agile-Displays is where I fell in love with C++, I worked on a multithreaded Linux application for edge devices, reducing latency and optimizing system performance. With a focus on efficiency, scalability, and cross-platform development, I love working on solving complex problems, debugging and taking ownership.
-            </p>
-            <span class="about-wrapper__cta">
-              <a href="./assets/CV.pdf" class="cta-btn cta-btn--resume">View Resume</a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /END About Section -->
-
-    <!--Experience Section-->
-    <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Experience</h2>
-          <article>
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">AdviNOW Medical, Scottsdale, AZ:  Software Engineer Intern</h3>
-              <p class="project-wrapper__text-info">
-                ● Restructured Rules Engine DB schema in Postgres to support scaling to multiple language translations.
-                ● Implemented a part of data pipeline to map relationships between illnesses and symptoms using BioBERT and BiLSTM, and to import this mapped data into MongoDB.
-                ● Built FastAPI service to generate and render History of Present Illness with mako template into EMR and doctor application using patient data.
-                ● Optimized set of Django services by implementing multithreading, minimizing PostgreSQL queries and redefining cache structure, resulting in a performance boost of over 55% for each endpoint.
-                ● Developed set of endpoints, to help medical team experiment with illness database in Neo4j.
-                ● Created Ensemble Model to map child insurances name to parent insurance entities.
-                ● Utilized BERT, XLNet and AWS Comprehend Medical to relate symptoms and CPT codes.
-                ● Conducted documentation and troubleshooting of slow/buggy services using Datadog and Sentry.
-              </p>
-            </div>
-          </article>
-
-          <!-- Each .row is a project -->
-          <article>
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Store Intelligence, Pleasanton, CA: Software Engineer Intern</h3>
-              <p class="project-wrapper__text-info">
-                ● Collaborated to develop C++11 multithreaded application with integration of SQLite3 running on Linux deployed on Cortex-A53 SOM primary function of binary protocol communication with FreeRTOS on M4.
-                ● Integrated unit tests in VectorCAST/C++ for existing code base.
-                ● Refactored C++ application to support Custom workflows to help QA team to experiment.
-                ● Programmed accelerated communication protocol between A53 and M4 which increased data transfer speed by 75% and reduced RF cycle wastage.
-                ● Built a Windows Test application in C# to replicate Vantiq cloud application to automate testing.
-                ● Integrated QR code based store-agent login system with 256-bit AES encryption into IOS application.
-                ● Managed and supported Continuous Integration for 2 projects using Jenkins.
-              </p>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article>
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">eSamudaay, Bangalore, India: Software Engineer Intern</h3>
-              <p class="project-wrapper__text-info">
-                ● Constructed REST APIs for decentralized commerce platform using Django and postgreSQL integrated with Redis.
-                ● Architected dynamic UI mapping and collaborated with frontend to build endpoints to enable UI customization.
-                ● Identified and fixed bugs in over 15 endpoints through unit testing using PyTest resulting in 92% in test coverage.
-              </p>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article>
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Graphene AI, Bangalore, India: Software Engineer Intern</h3>
-              <p class="project-wrapper__text-info">
-                ● Remodeled language detection system using CNN through Keras with an F1-score of 0.93 to filter reviews.
-                ● Automated review extraction processes from e-commerce sites with Scrapy and Selenium.
-                ● Built Dashboards using Python and Streamlit for QA team to validate data.
-                delivery of updates.
-              </p>
-            </div>
-          </article>
-          <!-- /END Project -->
-        </div>
-      </div>
-    </section>
-    <!-- End Projects Section -->
-
-    <!--Projects Section-->
-    <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
-
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Similarity-Aware Channel pruning </h3>
-              <p class="project-wrapper__text-info">
-                Proposed a novel channel pruning method to accelerate and compress CNNs, allowing deployment on resource-constrained devices. The method compares similarity of a layer's output feature maps based on five criteria. This approach is particularly useful when deploying CNNs on devices with limited resources, such as mobile phones or IoT devices, where the reduced size and faster processing can be critical for efficient operation.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/remove_neuron.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Parallelization of Chess Engine</h3>
-              <p class="project-wrapper__text-info">
-                I worked on parallelizing a chess engine using OpenMP in C programming language. We implemented the Min-Max algorithm with root splitting to optimize the engine's efficiency. The objective was to speed up the process of finding the best move in a given chess position by parallelizing the computations.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/chess.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Ranking Relevance of Corpus</h3>
-              <p class="project-wrapper__text-info">
-                Our team of 4 developed a model for ranking the relevance of a text corpus using Markov Decision Process algorithms. We then evaluated the effectiveness of our model by comparing its results with benchmarks on the LETOR Dataset.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/corpus.jpeg"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-        </div>
-      </div>
-    </section>
-    <!-- End Projects Section -->
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper">
-          <p class="contact-wrapper__text">Interested to connect? </p>
-          <a href="mailto: gnagara4@asu.edu" class="cta-btn cta-btn--resume">Email Me</a>
-        </div>
-      </div>
-    </section>
-    <!-- END Contact Section -->
-
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <a href="#hero" class="back-to-top" aria-label="go back to top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a
-            href="https://www.instagram.com/onandofftheroads_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="instagram"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gagan-konana/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/gagankonana"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="github"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-        <hr />
-      </div>
-    </footer>
-    <!-- END Footer Section -->
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear()
-    </script>
-    <script src="./javascript/vanilla-tilt.min.js"></script>
-    <script type="text/javascript" src="./javascript/valtilt.js"></script>
-  </body>
+</body>
 </html>
